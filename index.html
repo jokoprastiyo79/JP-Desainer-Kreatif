@@ -115,64 +115,64 @@
       <div class="produk-container" id="produkSlider">
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/Promosi.svg" target="_blank">
-            <object data="Promosi.svg" type="image/svg+xml" loading="lazy">
-              <img src="Promosi.jpg" alt="Desain Promosi" loading="lazy" />
+            <!-- <object data="Promosi.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="Promosi.jpg" alt="Desain Promosi" />
             </object>
           </a>
           <p>Desain Promosiku</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview1.svg" target="_blank">
-            <object data="preview1.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview1.jpg" alt="Banner Jasa Las" loading="lazy" />
+            <!-- <object data="preview1.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview1.jpg" alt="Banner Jasa Las" />
             </object>
           </a>
           <p>Banner Jasa Las</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview2.svg" target="_blank">
-            <object data="preview2.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview2.jpg" alt="Banner Kedai Mania" loading="lazy" />
+            <!-- <object data="preview2.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview2.jpg" alt="Banner Kedai Mania" />
             </object>
           </a>
           <p>Banner Kedai Mania</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview3.svg" target="_blank">
-            <object data="preview3.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview3.jpg" alt="Banner Warung Teh Lina" loading="lazy" />
+            <!-- <object data="preview3.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview3.jpg" alt="Banner Warung Teh Lina" />
             </object>
           </a>
           <p>Banner Warung Teh Lina</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview4.svg" target="_blank">
-            <object data="preview4.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview4.jpg" alt="Desain Sablon Baju" loading="lazy" />
+            <!-- <object data="preview4.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview4.jpg" alt="Desain Sablon Baju" />
             </object>
           </a>
           <p>Desain Sablon Baju</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview5.svg" target="_blank">
-            <object data="preview5.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview5.jpg" alt="Logo Masjid" loading="lazy" />
+            <!-- <object data="preview5.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview5.jpg" alt="Logo Masjid" />
             </object>
           </a>
           <p>Logo Masjid</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview6.svg" target="_blank">
-            <object data="preview6.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview6.jpg" alt="Logo Pecinta Burung" loading="lazy" />
+            <!-- <object data="preview6.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview6.jpg" alt="Logo Pecinta Burung" />
             </object>
           </a>
           <p>Logo Pecinta Burung</p>
         </div>
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview7.svg" target="_blank">
-            <object data="preview7.svg" type="image/svg+xml" loading="lazy">
-              <img src="preview7.jpg" alt="Logo Hammah Rabbits" loading="lazy" />
+            <!-- <object data="preview7.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview7.jpg" alt="Logo Hammah Rabbits" />
             </object>
           </a>
           <p>Logo Hammah Rabbits</p>
@@ -230,24 +230,36 @@ Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
   <button class="dark-toggle" onclick="toggleDark()">🌙 Mode</button>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('navMenu').classList.toggle('active');
-    }
-    function closeMenu() {
-      document.getElementById('navMenu').classList.remove('active');
-    }
-    function toggleDark() {
-      document.body.classList.toggle('dark');
-    }
+    const slider = document.getElementById('produkSlider');
+    const nav = document.getElementById('produkNav');
+    const items = slider.querySelectorAll('.produk-item');
     let currentSlide = 0;
-    function scrollProduk(direction) {
-      const slider = document.getElementById('produkSlider');
-      const items = slider.querySelectorAll('.produk-item');
-      const navDots = document.getElementById('produkNav').children;
-      currentSlide = Math.max(0, Math.min(currentSlide + direction, items.length - 1));
-      slider.scrollTo({ left: items[currentSlide].offsetLeft, behavior: 'smooth' });
-      for (let i = 0; i < navDots.length; i++) navDots[i].classList.remove('active');
-      navDots[currentSlide].classList.add('active');
+
+    // Buat dot navigasi otomatis
+    items.forEach((_, i) => {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => scrollToSlide(i));
+      nav.appendChild(dot);
+    });
+
+    function scrollToSlide(i) {
+      currentSlide = i;
+      slider.scrollTo({ left: items[i].offsetLeft, behavior: 'smooth' });
+      updateDots();
+    }
+
+    function scrollProduk(dir) {
+      currentSlide += dir;
+      if (currentSlide < 0) currentSlide = 0;
+      if (currentSlide >= items.length) currentSlide = items.length - 1;
+      scrollToSlide(currentSlide);
+    }
+
+    function updateDots() {
+      const dots = nav.querySelectorAll('span');
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     }
   </script>
 </body>
