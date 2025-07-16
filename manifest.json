@@ -1,0 +1,21 @@
+{
+  "name": "JP Desainer Kreatif",
+  "short_name": "JPDesainer",
+  "start_url": "/JP-Desainer-Kreatif/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#25d366",
+  "description": "JP Desainer Kreatif – Jasa desain logo dan branding visual profesional.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
