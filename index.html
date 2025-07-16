@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JP Desainer Kreatif</title>
+
+  <!-- SEO dan Open Graph -->
   <meta property="og:title" content="JP Desainer Kreatif – Desain Logo & Visual Branding" />
   <meta property="og:description" content="Desain eksklusif, siap cetak besar, bukan stok massal. Cocok untuk brand kamu!" />
   <meta property="og:image" content="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/Promosi.jpg" />
@@ -12,106 +14,18 @@
   <meta name="keywords" content="desain logo, jasa desain, banner usaha, branding usaha, JP Desainer Kreatif">
   <meta name="author" content="Joko Prasetyo">
   <meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="kode-verifikasi-dari-google" />
+  <meta name="google-site-verification" content="kode-verifikasi-dari-google" />
+
+  <!-- Fonts dan Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-<link rel="preload" href="fonts/Angelface.otf" as="font" type="font/otf" crossorigin="anonymous">
-  <style>
-    @font-face {
-      font-family: 'Angelface';
-      src: url('fonts/Angelface.otf') format('opentype');
-      font-display: swap;
-    }
-    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
-    body {
-      font-family: sans-serif;
-      background: #fff;
-      color: #333;
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark {
-      background: #1e1e1e;
-      color: #eee;
-    }
-    .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: #fff; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; transition: background 0.3s; }
-    body.dark .top-bar { background: #2c2c2c; border-color: #444; }
-    .logo {height: 42px;}
-    .nav-toggle { display: none; flex-direction: column; cursor: pointer; }
-    .nav-toggle span { height: 3px; width: 22px; background: #333; margin: 3px 0; transition: all 0.3s ease; }
-    body.dark .nav-toggle span { background: #eee; }
-    .nav-menu { display: flex; gap: 0.8rem; transition: all 0.3s ease; }
-    .nav-menu a { text-decoration: none; color: #333; font-weight: bold; font-size: 0.85rem; transition: color 0.3s ease; }
-    .nav-menu a:hover { color: #25d366; }
-    body.dark .nav-menu a { color: #eee; }
-    body.dark .nav-menu a:hover { color: #25d366; }
-    @media screen and (max-width: 640px) {
-      .top-bar {flex-wrap: wrap;}
-      .nav-toggle {display: flex;}
-      .nav-menu { width: 100%; flex-direction: column; display: none; margin-top: 0.8rem; gap: 0.5rem; opacity: 0; transform: translateY(-10px); pointer-events: none; }
-      .nav-menu.active { display: flex; opacity: 1; transform: translateY(0); pointer-events: all; }
-    }
-    .title { text-align: center; padding: 1.5rem 1rem 0.5rem; }
-    .title h1 { font-size: 2rem; margin-bottom: 0.3rem; }
-    .title h1 .ubuntu { font-family: 'Ubuntu', sans-serif; font-weight: 700; }
-    .title h1 .angelface { font-family: 'Angelface', cursive; font-weight: bold; color: #d4af37; }
-    .title p { font-size: 1rem; color: #666; font-family: 'Ubuntu', sans-serif; font-weight: 700; }
-    body.dark .title p {color: #aaa;}
-    .section { padding: 2rem 1.5rem; max-width: 960px; margin: auto; scroll-margin-top: 160px; }
-    .section h2 { font-size: 1.4rem; margin-bottom: 1rem; color: #222; text-align: center; }
-    body.dark .section h2 {color: #ddd;}
-  .layanan {
-    background: #f7f7f7;
-    color: #333;
-  }
-  body.dark .layanan {
-    background: #2b2b2b;
-    color: #eee;
-  }
-  .layanan ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  .layanan li {
-    margin-bottom: 1.2rem;
-  }
-  .layanan p {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-  }
-    .produk-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; height: 310px; position: relative; }
-    .produk-item { flex: 0 0 100%; scroll-snap-align: start; text-align: center; padding: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .produk-item object, .produk-item img { max-height: 300px; width: auto; max-width: 100%; object-fit: contain; }
-    .produk-item p { margin-top: 0.5rem; color: #555; }
-    body.dark .produk-item p { color: #ccc; }
-    .produk-nav { text-align: center; margin-top: 1rem; }
-    .produk-nav span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ccc; margin: 0 5px; }
-    .produk-nav span.active { background: #25d366; }
-    .produk-arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2rem; color: #25d366; background: #fff; border-radius: 50%; padding: 0.3rem 0.6rem; cursor: pointer; z-index: 5; }
-    .produk-arrow.left {left: 10px;}
-    .produk-arrow.right {right: 10px;}
-    .cta { text-align: center; margin: 2rem 0; }
-    .cta a { background: #25d366; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1rem; }
-    footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #999; }
-    .kontak-box { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
-    .kontak-link { display: inline-flex; align-items: center; gap: 0.5rem; background: #f1f1f1; padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; color: #333; font-weight: bold; }
-    .kontak-link img { width: 20px; height: 20px; }
-    .dark-toggle { position: fixed; bottom: 1rem; right: 1rem; background: #25d366; color: white; padding: 0.5rem 1rem; border-radius: 999px; border: none; cursor: pointer; font-size: 0.8rem; z-index: 20; }
-    .section.testimoni p { margin-bottom: 1.2rem; padding: 0.8rem 1rem; border: 1px solid #ddd; border-radius: 6px; background: #f9f9f9; }
-    body.dark .section.testimoni p { border-color: #444; background: #2a2a2a; }
-    .section.kenapa { background: #f5f5f5; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
-    body.dark .section.kenapa { background: #2a2a2a; color: #eee; }
-    .section.kenapa ul { max-width: 700px; margin: 0 auto; padding-left: 1.2rem; }
-    .section.kenapa li { margin-bottom: 1rem; line-height: 1.5; }
-  </style>
+  <link rel="preload" href="fonts/Angelface.otf" as="font" type="font/otf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Top bar dan nav tetap --><!-- ... -->
+  <!-- Navigasi -->
   <div class="top-bar">
     <img src="logo.png" alt="Logo JP" class="logo" />
-    <div class="nav-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     <div class="nav-menu" id="navMenu">
       <a href="#home" onclick="closeMenu()">Home</a>
       <a href="#layanan" onclick="closeMenu()">Layanan Kami</a>
@@ -122,12 +36,12 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header class="title section" id="home">
     <h1><span class="ubuntu">JP Desainer</span> <span class="angelface">Kreatif</span></h1>
     <p>Desain Logo & Visual Branding</p>
   </header>
 
-  <!-- Portfolio, Testimoni, dan lainnya tetap --><!-- ... -->
 <section class="section layanan" id="layanan">
   <h2>Layanan yang Kami Tawarkan</h2>
   <p>
@@ -136,45 +50,45 @@
   <ul>
     <li><strong>Desain Logo Eksklusif</strong><br>
       Logo berdasarkan karakter dan nilai brand Anda — bukan desain stok. Format vector siap cetak dalam berbagai ukuran tanpa kehilangan kualitas.</li><li><strong>Desain Banner / Spanduk Promosi</strong><br>
-  Cocok untuk usaha kuliner, bengkel, jasa, event, dan lainnya. Dirancang mencolok dan jelas terbaca dari jarak jauh.</li>
+      Cocok untuk usaha kuliner, bengkel, jasa, event, dan lainnya. Dirancang mencolok dan jelas terbaca dari jarak jauh.</li>
 
-<li><strong>Desain Kaos / Sablon (Brand atau Komunitas)</strong><br>
-  Desain visual siap digunakan untuk produksi sablon atau digital printing. Cocok untuk clothing, event komunitas, hingga merchandise pribadi.</li>
+    <li><strong>Desain Kaos / Sablon (Brand atau Komunitas)</strong><br>
+      Desain visual siap digunakan untuk produksi sablon atau digital printing. Cocok untuk clothing, event komunitas, hingga merchandise pribadi.</li>
 
-<li><strong>Desain Label Produk / Kemasan</strong><br>
-  Membuat tampilan produk lebih menarik dan profesional, meningkatkan daya tarik di rak penjualan.</li>
+    <li><strong>Desain Label Produk / Kemasan</strong><br>
+      Membuat tampilan produk lebih menarik dan profesional, meningkatkan daya tarik di rak penjualan.</li>
 
-<li><strong>Desain Feed dan Story Media Sosial</strong><br>
-  Konten visual Instagram atau Facebook yang rapi dan selaras dengan brand Anda, memperkuat kepercayaan audiens.</li>
+    <li><strong>Desain Feed dan Story Media Sosial</strong><br>
+      Konten visual Instagram atau Facebook yang rapi dan selaras dengan brand Anda, memperkuat kepercayaan audiens.</li>
 
-<li><strong>Desain Kartu Nama & Identitas Usaha</strong><br>
-  Format elegan dan mudah dibagikan, menciptakan kesan profesional sejak pertemuan pertama.</li>
+    <li><strong>Desain Kartu Nama & Identitas Usaha</strong><br>
+      Format elegan dan mudah dibagikan, menciptakan kesan profesional sejak pertemuan pertama.</li>
 
-<li><strong>Desain Company Profile / Brosur Digital & Cetak</strong><br>
-  Tampilan informatif dan menarik untuk memperkenalkan usaha kepada calon klien atau mitra.</li>
+    <li><strong>Desain Company Profile / Brosur Digital & Cetak</strong><br>
+      Tampilan informatif dan menarik untuk memperkenalkan usaha kepada calon klien atau mitra.</li>
 
-<li><strong>Desain Undangan Digital & Cetak</strong><br>
-  Untuk acara pernikahan, tahlil, khitanan, reuni, dan lainnya. Format siap cetak atau dibagikan via WhatsApp.</li>
+    <li><strong>Desain Undangan Digital & Cetak</strong><br>
+      Untuk acara pernikahan, tahlil, khitanan, reuni, dan lainnya. Format siap cetak atau dibagikan via WhatsApp.</li>
 
-<li><strong>Desain Slide Presentasi / Template PowerPoint</strong><br>
-  Visual presentasi yang berkelas, cocok untuk seminar, bisnis, edukasi, atau pitching.</li>
+    <li><strong>Desain Slide Presentasi / Template PowerPoint</strong><br>
+      Visual presentasi yang berkelas, cocok untuk seminar, bisnis, edukasi, atau pitching.</li>
 
-<li><strong>Desain Cetak Islami</strong><br>
-  Pembuatan sampul buku Yasin, banner tahlil, dan desain keagamaan lainnya dengan nuansa khusyuk dan estetika tinggi.</li>
+    <li><strong>Desain Cetak Islami</strong><br>
+      Pembuatan sampul buku Yasin, banner tahlil, dan desain keagamaan lainnya dengan nuansa khusyuk dan estetika tinggi.</li>
 
-<li><strong>Pembuatan Website Profil Usaha</strong><br>
-  Kami menyediakan layanan website profesional, tampil menarik dan mudah diakses dari semua perangkat. 
-  <br><br>
-  <em>Tersedia dua pilihan:</em><br>
-  <strong>• Versi Hemat</strong> – Website sederhana tanpa biaya hosting bulanan. Cocok untuk pelaku usaha yang ingin tampil kredibel secara digital dengan biaya terjangkau.<br>
+    <li><strong>Pembuatan Website Profil Usaha</strong><br>
+      Kami menyediakan layanan website profesional, tampil menarik dan mudah diakses dari semua perangkat. 
+      <br><br>
+      <em>Tersedia dua pilihan:</em><br>
+      <strong>• Versi Hemat</strong> – Website sederhana tanpa biaya hosting bulanan. Cocok untuk pelaku usaha yang ingin tampil kredibel secara digital dengan biaya terjangkau.<br>
   <strong>• Versi Premium</strong> – Website lengkap dengan domain pribadi. Desain eksklusif dan fitur lengkap untuk usaha yang ingin bersaing secara digital.
 </li>
 
-<li><strong>Pembuatan Google Bisnisku (Maps & Profil Usaha)</strong><br>
-  Kami bantu bisnis Anda tampil di Google Maps, lengkap dengan profil, jam buka, dan ulasan pelanggan agar mudah ditemukan oleh calon pelanggan lokal.</li>
+    <li><strong>Pembuatan Google Bisnisku (Maps & Profil Usaha)</strong><br>
+      Kami bantu bisnis Anda tampil di Google Maps, lengkap dengan profil, jam buka, dan ulasan pelanggan agar mudah ditemukan oleh calon pelanggan lokal.</li>
 
-  </ul>
-</section>
+    </ul>
+  </section>
 
   <section class="section" id="produk">
     <h2>Portfolio Desain</h2>
@@ -291,60 +205,10 @@ Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 JP Desainer Kreatif
-  </footer>
+  <footer>&copy; 2025 JP Desainer Kreatif</footer>
 
   <button class="dark-toggle" onclick="toggleDark()">🌙 Mode</button>
-<script>
-  // === Navigasi Menu ===
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('active');
-  }
-  function closeMenu() {
-    document.getElementById('navMenu').classList.remove('active');
-  }
 
-  // === Mode Gelap ===
-  function toggleDark() {
-    document.body.classList.toggle('dark');
-  }
-
-  // === Slider Produk ===
-  const slider = document.getElementById('produkSlider');
-  const nav = document.getElementById('produkNav');
-  const items = slider.querySelectorAll('.produk-item');
-  let currentSlide = 0;
-
-  // Bersihkan nav dots terlebih dahulu
-  nav.innerHTML = "";
-
-  // Buat dot navigasi otomatis
-  items.forEach((_, i) => {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => scrollToSlide(i));
-    nav.appendChild(dot);
-  });
-
-  function scrollToSlide(i) {
-    currentSlide = i;
-    slider.scrollTo({ left: items[i].offsetLeft, behavior: 'smooth' });
-    updateDots();
-  }
-
-  function scrollProduk(dir) {
-    currentSlide += dir;
-    if (currentSlide < 0) currentSlide = 0;
-    if (currentSlide >= items.length) currentSlide = items.length - 1;
-    scrollToSlide(currentSlide);
-  }
-
-  function updateDots() {
-    const dots = nav.querySelectorAll('span');
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-  }
-</script>
+  <script src="js/script.js"></script>
 </body>
 </html>
