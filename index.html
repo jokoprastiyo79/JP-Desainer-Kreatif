@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="cache-control" content="public, max-age=31536000">
+  <meta http-equiv="expires" content="31536000">
   <title>JP Desainer Kreatif</title>
 
   <!-- SEO dan Open Graph -->
@@ -15,16 +17,38 @@
   <meta name="author" content="Joko Prasetyo">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="kode-verifikasi-dari-google" />
-
-  <!-- Fonts dan Styles -->
+  <meta property="og:type" content="website" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#25d366">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-startup-image" href="logo.png" />
+  <link rel="apple-touch-startup-image"
+      href="splash-screen.png"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+  <link rel="apple-touch-startup-image"
+      href="splash-screen-landscape.png"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" />
+  <link rel="apple-touch-startup-image" href="splash-1242x2688.png"
+media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="manifest.json" />
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
   <link rel="preload" href="fonts/Angelface.otf" as="font" type="font/otf" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="image" href="logo.png">
+  <link rel="preload" as="image" href="Promosi.jpg">
 </head>
 <body>
   <!-- Navigasi -->
   <div class="top-bar">
-    <img src="logo.png" alt="Logo JP" class="logo" />
+    <img src="logo.png" alt="Logo JP" class="logo" fetchpriority="high" />
     <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     <div class="nav-menu" id="navMenu">
       <a href="#home" onclick="closeMenu()">Home</a>
@@ -209,6 +233,18 @@ Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
 
   <button class="dark-toggle" onclick="toggleDark()">🌙 Mode</button>
 
-  <script src="js/script.js"></script>
+  <button id="installBtn" style="display:none">Install Aplikasi</button>
+
+  <script src="js/script.js" defer></script>
+  <script src="js/install.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('SW registered:', reg))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
 </body>
 </html>
