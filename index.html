@@ -218,7 +218,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  max-height: 364px; /* Menyesuaikan tinggi maksimum gambar (480px) + padding */
+  max-height: 480px; /* Menyesuaikan tinggi maksimum gambar (480px) + padding */
   position: relative;
 }
 
@@ -232,21 +232,23 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+background: green;
 }
 
 /* Menyesuaikan gambar agar proporsional dan tidak meloncat */
 .produk-item object,
 .produk-item img {
-  height: 480px;           /* Gambar seragam */
+  height: 310px;           /* Gambar seragam */
   width: auto;
   max-width: 100%;         /* Supaya tetap responsif */
   object-fit: contain;
   display: block;
+background: red;
 }
 
 /* Teks di bawah gambar */
 .produk-item p {
-  margin-top: 0.25rem;
+  margin-top: 0;
   color: #555;
 }
 
