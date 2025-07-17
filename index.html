@@ -213,71 +213,90 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
       max-width: 700px;
       margin: 0 auto 1.5rem;
     }
-    .produk-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      height: 310px;
-      position: relative;
-    }
-    .produk-item {
-      flex: 0 0 100%;
-      scroll-snap-align: start;
-      text-align: center;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .produk-item object,
-    .produk-item img {
-      max-height: 300px;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
-    }
-    .produk-item p {
-      margin-top: 0.5rem;
-      color: #555;
-    }
-    body.dark .produk-item p {
-      color: #ccc;
-    }
-    .produk-nav {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .produk-nav span {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ccc;
-      margin: 0 5px;
-    }
-    .produk-nav span.active {
-      background: #25d366;
-    }
-    .produk-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #25d366;
-      background: #fff;
-      border-radius: 50%;
-      padding: 0.3rem 0.6rem;
-      cursor: pointer;
-      z-index: 5;
-    }
-    .produk-arrow.left {
-      left: 10px;
-    }
-    .produk-arrow.right {
-      right: 10px;
-    }
+.produk-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-height: 330px; /* Menyesuaikan tinggi maksimum gambar (480px) + padding */
+  position: relative;
+}
+
+.produk-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #eee;
+}
+
+/* Menyesuaikan gambar agar proporsional dan tidak meloncat */
+.produk-item object,
+.produk-item img {
+  height: 480px;           /* Gambar seragam */
+  width: auto;
+  max-width: 100%;         /* Supaya tetap responsif */
+  object-fit: contain;
+  display: block;
+}
+
+/* Teks di bawah gambar */
+.produk-item p {
+  margin-top: 0.25rem;
+  color: #555;
+}
+
+/* Teks versi dark mode */
+body.dark .produk-item p {
+  color: #ccc;
+}
+
+/* Navigasi titik di bawah carousel */
+.produk-nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.produk-nav span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+}
+
+.produk-nav span.active {
+  background: #25d366;
+}
+
+/* Tombol panah kiri-kanan */
+.produk-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #25d366;
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.produk-arrow.left {
+  left: 10px;
+}
+
+.produk-arrow.right {
+  right: 10px;
+}
     .cta {
       text-align: center;
       margin: 2rem 0;
@@ -369,7 +388,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
 <body>
 
   <div class="top-bar">
-    <img src="logo.webp" alt="JP Desainer Kreatif - Jasa Desain Logo & Visual Branding" class="logo" fetchpriority="high" width="111" height="42" loading="lazy" decoding="async">
+    <img src="logo.webp" alt="JP Desainer Kreatif - Jasa Desain Logo & Visual Branding" class="logo" fetchpriority="high" loading="lazy" decoding="async">
     <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     <div class="nav-menu" id="navMenu">
       <a href="#home" onclick="closeMenu()">Home</a>
@@ -442,7 +461,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/Promosi.svg" target="_blank">
             <!-- <object data="Promosi.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="Promosi.webp" alt="Desain Promosi" width="300" height="300" loading="lazy" decoding="async">
+              <img src="Promosi.webp" alt="Desain Promosi" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Desain Promosiku</p>
@@ -450,7 +469,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview1.svg" target="_blank">
             <!-- <object data="preview1.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview1.webp" alt="Banner Jasa Las" width="300" height="300" loading="lazy" decoding="async">
+              <img src="preview1.webp" alt="Banner Jasa Las" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Banner Jasa Las</p>
@@ -458,7 +477,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview2.svg" target="_blank">
             <!-- <object data="preview2.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview2.webp" alt="Banner Kedai Mania" width="300" height="300" loading="lazy" decoding="async">
+              <img src="preview2.webp" alt="Banner Kedai Mania" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Banner Kedai Mania</p>
@@ -466,7 +485,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview3.svg" target="_blank">
             <!-- <object data="preview3.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview3.webp" alt="Banner Warung Teh Lina" width="332" height="221" loading="lazy" decoding="async">
+              <img src="preview3.webp" alt="Banner Warung Teh Lina" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Banner Warung Teh Lina</p>
@@ -474,7 +493,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview4.svg" target="_blank">
             <!-- <object data="preview4.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview4.webp" alt="Desain Sablon Baju" width="332" height="221" loading="lazy" decoding="async">
+              <img src="preview4.webp" alt="Desain Sablon Baju" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Desain Sablon Baju</p>
@@ -482,7 +501,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview5.svg" target="_blank">
             <!-- <object data="preview5.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview5.webp" alt="Logo Masjid" width="300" height="300" loading="lazy" decoding="async">
+              <img src="preview5.webp" alt="Logo Masjid" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Logo Masjid</p>
@@ -490,7 +509,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview6.svg" target="_blank">
             <!-- <object data="preview6.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview6.webp" alt="Logo Pecinta Burung" width="300" height="300" loading="lazy" decoding="async">
+              <img src="preview6.webp" alt="Logo Pecinta Burung" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Logo Pecinta Burung</p>
@@ -498,7 +517,7 @@ media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixe
         <div class="produk-item">
           <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview7.svg" target="_blank">
             <!-- <object data="preview7.svg" type="image/svg+xml" loading="lazy"> -->
-              <img src="preview7.webp" alt="Logo Hammah Rabbits" width="300" height="300" loading="lazy" decoding="async">
+              <img src="preview7.webp" alt="Logo Hammah Rabbits" loading="lazy" decoding="async">
             <!-- </object> -->
           </a>
           <p>Logo Hammah Rabbits</p>
