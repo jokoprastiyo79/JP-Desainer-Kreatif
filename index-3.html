@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="cache-control" content="public, max-age=31536000">
+  <meta http-equiv="expires" content="31536000">
+ <title>JP Desainer Kreatif - Jasa Desain Logo & Visual Branding</title>
+
+  <!-- SEO dan Open Graph -->
+  <meta property="og:title" content="JP Desainer Kreatif – Desain Logo & Visual Branding" />
+  <meta property="og:description" content="Desain eksklusif, siap cetak besar, bukan stok massal. Cocok untuk brand kamu!" />
+  <meta property="og:image" content="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/Promosi.jpg" />
+  <meta property="og:url" content="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/" />
+  <meta name="description" content="Jasa desain logo eksklusif, banner promosi, dan branding visual. Cocok untuk bisnis dan UMKM.">
+  <meta name="keywords" content="desain logo, jasa desain, banner usaha, branding usaha, JP Desainer Kreatif">
+  <meta name="author" content="Joko Prasetyo">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="kode-verifikasi-dari-google" />
+  <meta property="og:type" content="website" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#25d366">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-startup-image" href="logo.png" />
+  <link rel="apple-touch-startup-image"
+      href="splash-screen.png"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+  <link rel="apple-touch-startup-image"
+      href="splash-screen-landscape.png"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" />
+  <link rel="apple-touch-startup-image" href="splash-1242x2688.png"
+media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="preload" href="fonts/Ubuntu-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Angelface.otf" as="font" type="font/otf" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="css/style.css" /> -->
+  <link rel="preload" as="image" href="logo.png">
+  <link rel="preload" as="image" href="Promosi.jpg">
+  <style>
+    @font-face {
+      font-family: 'Ubuntu';
+      src: url('fonts/Ubuntu-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Angelface';
+      src: url('fonts/Angelface.otf') format('opentype');
+      font-display: swap;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #1e1e1e;
+      color: #eee;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+    body.dark .top-bar {
+      background: #2c2c2c;
+      border-color: #444;
+    }
+    .logo {
+      height: 42px;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      height: 3px;
+      width: 22px;
+      background: #333;
+      margin: 3px 0;
+      transition: all 0.3s ease;
+    }
+    body.dark .nav-toggle span {
+      background: #eee;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 0.8rem;
+      transition: all 0.3s ease;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+    .nav-menu a:hover {
+      color: #25d366;
+    }
+    body.dark .nav-menu a {
+      color: #eee;
+    }
+    body.dark .nav-menu a:hover {
+      color: #25d366;
+    }
+    @media screen and (max-width: 640px) {
+      .top-bar {
+        flex-wrap: wrap;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-menu {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        margin-top: 0.8rem;
+        gap: 0.5rem;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+      }
+      .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+      }
+    }
+    .title {
+      text-align: center;
+      padding: 1.5rem 1rem 0.5rem;
+    }
+    .title h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+    .title h1 .ubuntu {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+    }
+    .title h1 .angelface {
+      font-family: 'Angelface', cursive;
+      font-weight: bold;
+      color: #b8860b;
+    }
+    .title p {
+      font-size: 1rem;
+      color: #666;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+    }
+    body.dark .title p {
+      color: #aaa;
+    }
+    .section {
+      padding: 2rem 1.5rem;
+      max-width: 960px;
+      margin: auto;
+      scroll-margin-top: 160px;
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #222;
+      text-align: center;
+    }
+    body.dark .section h2 {
+      color: #ddd;
+    }
+    .layanan {
+      background: #f7f7f7;
+      color: #333;
+    }
+    body.dark .layanan {
+      background: #2b2b2b;
+      color: #eee;
+    }
+    .layanan ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .layanan li {
+      margin-bottom: 1.2rem;
+    }
+    .layanan p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+.produk-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-height: 480px;
+  padding-top: 0.5rem;
+  padding-bottom: 3rem; /* agar teks kebagian ruang */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.produk-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.produk-item img {
+  height: 480px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.produk-item p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+.produk-caption {
+  text-align: center;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+  
+/* Teks versi dark mode */  
+body.dark .produk-item p {  
+  color: #ccc;  
+}  
+  
+/* Navigasi titik di bawah carousel */  
+.produk-nav {  
+  text-align: center;  
+  margin-top: 1rem;  
+}  
+  
+.produk-nav span {  
+  display: inline-block;  
+  width: 10px;  
+  height: 10px;  
+  border-radius: 50%;  
+  background: #ccc;  
+  margin: 0 5px;  
+}  
+  
+.produk-nav span.active {  
+  background: #25d366;  
+}  
+  
+/* Tombol panah kiri-kanan */  
+.produk-arrow {  
+  position: absolute;  
+  top: 50%;  
+  transform: translateY(-50%);  
+  font-size: 2rem;  
+  color: #25d366;  
+  background: #fff;  
+  border-radius: 50%;  
+  padding: 0.3rem 0.6rem;  
+  cursor: pointer;  
+  z-index: 5;  
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);  
+}  
+  
+.produk-arrow.left {  
+  left: 10px;  
+}  
+  
+.produk-arrow.right {  
+  right: 10px;  
+}
+    .cta {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cta a {
+      background: #25d366;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    body.dark footer {
+      color: #ccc;
+    }
+    .kontak-box {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .kontak-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f1f1f1;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .kontak-link img {
+      width: 20px;
+      height: 20px;
+    }
+    .dark-toggle {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: #008000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      z-index: 20;
+    }
+    .section.testimoni p {
+      margin-bottom: 1.2rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+    body.dark .section.testimoni p {
+      border-color: #444;
+      background: #2a2a2a;
+    }
+    .section.kenapa {
+      background: #f5f5f5;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    body.dark .section.kenapa {
+      background: #2a2a2a;
+      color: #eee;
+    }
+    .section.kenapa ul {
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 1.2rem;
+    }
+    .section.kenapa li {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <img src="logo.webp" alt="JP Desainer Kreatif - Jasa Desain Logo & Visual Branding" class="logo" fetchpriority="high" loading="lazy" decoding="async">
+    <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="nav-menu" id="navMenu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#layanan" onclick="closeMenu()">Layanan Kami</a>
+      <a href="#produk" onclick="closeMenu()">Portfolio</a>
+      <a href="#testimoni" onclick="closeMenu()">Testimoni</a>
+      <a href="#kenapa" onclick="closeMenu()">Kenapa Kami</a>
+      <a href="#kontak" onclick="closeMenu()">Kontak</a>
+    </div>
+  </div>
+
+  <header class="title section" id="home">
+    <h1><span class="ubuntu">JP Desainer</span> <span class="angelface">Kreatif</span></h1>
+    <p>Desain Logo & Visual Branding</p>
+  </header>
+
+<section class="section layanan" id="layanan">
+  <h2>Layanan yang Kami Tawarkan</h2>
+  <p>
+    JP Desainer Kreatif hadir sebagai solusi terpercaya untuk membantu Anda membangun citra visual usaha maupun personal dengan desain yang kuat, eksklusif, dan siap pakai. Berikut adalah layanan-layanan yang kami sediakan:
+  </p>
+  <ul>
+    <li><strong>Desain Logo Eksklusif</strong><br>
+      Logo berdasarkan karakter dan nilai brand Anda — bukan desain stok. Format vector siap cetak dalam berbagai ukuran tanpa kehilangan kualitas.</li><li><strong>Desain Banner / Spanduk Promosi</strong><br>
+      Cocok untuk usaha kuliner, bengkel, jasa, event, dan lainnya. Dirancang mencolok dan jelas terbaca dari jarak jauh.</li>
+
+    <li><strong>Desain Kaos / Sablon (Brand atau Komunitas)</strong><br>
+      Desain visual siap digunakan untuk produksi sablon atau digital printing. Cocok untuk clothing, event komunitas, hingga merchandise pribadi.</li>
+
+    <li><strong>Desain Label Produk / Kemasan</strong><br>
+      Membuat tampilan produk lebih menarik dan profesional, meningkatkan daya tarik di rak penjualan.</li>
+
+    <li><strong>Desain Feed dan Story Media Sosial</strong><br>
+      Konten visual Instagram atau Facebook yang rapi dan selaras dengan brand Anda, memperkuat kepercayaan audiens.</li>
+
+    <li><strong>Desain Kartu Nama & Identitas Usaha</strong><br>
+      Format elegan dan mudah dibagikan, menciptakan kesan profesional sejak pertemuan pertama.</li>
+
+    <li><strong>Desain Company Profile / Brosur Digital & Cetak</strong><br>
+      Tampilan informatif dan menarik untuk memperkenalkan usaha kepada calon klien atau mitra.</li>
+
+    <li><strong>Desain Undangan Digital & Cetak</strong><br>
+      Untuk acara pernikahan, tahlil, khitanan, reuni, dan lainnya. Format siap cetak atau dibagikan via WhatsApp.</li>
+
+    <li><strong>Desain Slide Presentasi / Template PowerPoint</strong><br>
+      Visual presentasi yang berkelas, cocok untuk seminar, bisnis, edukasi, atau pitching.</li>
+
+    <li><strong>Desain Cetak Islami</strong><br>
+      Pembuatan sampul buku Yasin, banner tahlil, dan desain keagamaan lainnya dengan nuansa khusyuk dan estetika tinggi.</li>
+
+    <li><strong>Pembuatan Website Profil Usaha</strong><br>
+      Kami menyediakan layanan website profesional, tampil menarik dan mudah diakses dari semua perangkat. 
+      <br><br>
+      <em>Tersedia dua pilihan:</em><br>
+      <strong>• Versi Hemat</strong> – Website sederhana tanpa biaya hosting bulanan. Cocok untuk pelaku usaha yang ingin tampil kredibel secara digital dengan biaya terjangkau.<br>
+  <strong>• Versi Premium</strong> – Website lengkap dengan domain pribadi. Desain eksklusif dan fitur lengkap untuk usaha yang ingin bersaing secara digital.
+</li>
+
+    <li><strong>Pembuatan Google Bisnisku (Maps & Profil Usaha)</strong><br>
+      Kami bantu bisnis Anda tampil di Google Maps, lengkap dengan profil, jam buka, dan ulasan pelanggan agar mudah ditemukan oleh calon pelanggan lokal.</li>
+
+    </ul>
+  </section>
+
+  <section class="section" id="produk">
+    <h2>Portfolio Desain</h2>
+    <div style="position: relative;">
+      <span class="produk-arrow left" onclick="scrollProduk(-1)">&#10094;</span>
+      <div class="produk-container" id="produkSlider">
+        <div class="produk-item" data-caption="Desain Logo Promosi">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/Promosi.svg" target="_blank">
+            <!-- <object data="Promosi.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="Promosi.webp" alt="Desain Promosi" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Banner Jasa Las">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview1.svg" target="_blank">
+            <!-- <object data="preview1.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview1.webp" alt="Banner Jasa Las" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Banner Kedai Mania">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview2.svg" target="_blank">
+            <!-- <object data="preview2.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview2.webp" alt="Banner Kedai Mania" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Banner Warung Teh Lina">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview3.svg" target="_blank">
+            <!-- <object data="preview3.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview3.webp" alt="Banner Warung Teh Lina" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Desain Sablon Baju">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview4.svg" target="_blank">
+            <!-- <object data="preview4.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview4.webp" alt="Desain Sablon Baju" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Logo Masjid">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview5.svg" target="_blank">
+            <!-- <object data="preview5.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview5.webp" alt="Logo Masjid" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Logo Pecinta Burung">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview6.svg" target="_blank">
+            <!-- <object data="preview6.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview6.webp" alt="Logo Pecinta Burung" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+        <div class="produk-item" data-caption="Logo Hannah Rabbits">
+          <a href="https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/preview7.svg" target="_blank">
+            <!-- <object data="preview7.svg" type="image/svg+xml" loading="lazy"> -->
+              <img src="preview7.webp" alt="Logo Hammah Rabbits" loading="lazy" decoding="async">
+            <!-- </object> -->
+          </a>
+        </div>
+      </div>
+
+<p class="produk-caption" id="caption"></p>
+
+      <span class="produk-arrow right" onclick="scrollProduk(1)">&#10095;</span>
+    </div>
+    <div class="produk-nav" id="produkNav">
+      <span class="active"></span>
+      <span></span>
+    </div>
+  </section>
+
+  <section class="section testimoni" id="testimoni">
+    <h2>Testimoni Pelanggan</h2>
+    <p><em>"Makasih bang.
+Bermanfaat banget buat saya.
+Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
+    <p><em>"Desain dari JP sangat keren dan cepat jadi, cocok banget untuk promosi usaha saya."</em> – Adi</p>
+    <p><em>"Terima Kasih Bosku 🙏. Keren habis 👍</em> – Suare Lombok</p>
+    <p><em>"Desainnya beda dari yang lain, profesional banget dan cepat merespons revisi!"</em> – Andra</p>
+  </section>
+
+  <section class="section kenapa" id="kenapa">
+    <h2>Mengapa harus JP Desainer?</h2>
+    <ul>
+      <li>✅ Desain eksklusif dan dibuat khusus sesuai karakter brand Anda, bukan template pasaran.</li>
+      <li>✅ File vektor siap cetak, hasil tajam dan tidak pecah meski dicetak besar.</li>
+      <li>✅ Komunikasi cepat dan terbuka, revisi mudah tanpa ribet.</li>
+      <li>✅ Proses kreatif langsung ditangani oleh desainer berpengalaman.</li>
+      <li>✅ Dukungan layanan branding visual menyeluruh sesuai kebutuhan Anda.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="kontak">
+    <h2>Hubungi Kami</h2>
+    <div class="kontak-box">
+      <a href="https://wa.me/6285212887849" class="kontak-link" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/25d366/whatsapp.png" alt="WA" />
+        6285212887849
+      </a>
+      <a href="https://m.me/mr.jokoprastiyo" class="kontak-link" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/0078FF/facebook-messenger.png" alt="Messenger" />
+        Joko Prasetyo
+      </a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 JP Desainer Kreatif</footer>
+
+  <button class="dark-toggle" onclick="toggleDark()">🌙 Mode</button>
+
+  <button id="installBtn" style="display:none">Install Aplikasi</button>
+
+  <script src="js/script.js" defer></script>
+  <script src="js/install.js" defer></script>
+<script>
+const container = document.getElementById('carousel');
+const caption = document.getElementById('caption');
+
+function updateCaption() {
+  const items = document.querySelectorAll('.produk-item');
+  const scrollLeft = container.scrollLeft;
+  const itemWidth = container.clientWidth;
+  const index = Math.round(scrollLeft / itemWidth);
+  
+  if (items[index]) {
+    caption.textContent = items[index].dataset.caption;
+  }
+}
+
+// Update saat scroll berhenti
+container.addEventListener('scroll', () => {
+  clearTimeout(container._scrollTimer);
+  container._scrollTimer = setTimeout(updateCaption, 100);
+});
+
+// Caption awal
+updateCaption();
+</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('SW registered:', reg))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
