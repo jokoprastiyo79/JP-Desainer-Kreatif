@@ -1,33 +1,39 @@
-const installBtn = document.getElementById('installBtn');
-let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+  let deferredPrompt;
 
-// Sembunyikan dulu
-installBtn.style.display = 'none';
+  // Cek support PWA install
+  if (!('BeforeInstallPromptEvent' in window)) {
+    console.log("❌ Browser tidak mendukung install prompt");
+    installBtn.style.display = 'none';
+    return;
+  }
 
-// Cek support dan mode standalone
-const supportsInstall = 'BeforeInstallPromptEvent' in window;
-const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  // Cek jika sudah diinstal
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (isStandalone) {
+    installBtn.style.display = 'none';
+  }
 
-if (supportsInstall && !isStandalone) {
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    installBtn.style.display = 'flex'; // Tampilkan tombol
+    if (!isStandalone) {
+      installBtn.style.display = 'flex';
+    }
 
     installBtn.addEventListener('click', () => {
       installBtn.style.display = 'none';
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('✅ User accepted the install');
+          console.log("✅ Diinstal!");
         }
         deferredPrompt = null;
       });
     });
   });
-}
 
-window.addEventListener('appinstalled', () => {
-  installBtn.style.display = 'none';
-  console.log('📱 App successfully installed');
-});
+  window.addEventListener('appinstalled', () => {
+    installBtn.style.display = 'none';
+    console.log("📱 Aplikasi sudah diinstal");
+  });
