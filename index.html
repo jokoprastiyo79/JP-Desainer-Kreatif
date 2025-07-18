@@ -217,89 +217,75 @@
       max-width: 700px;
       margin: 0 auto 1.5rem;
     }
-.produk-container {  
-  display: flex;  
-  overflow-x: auto;  
-  scroll-snap-type: x mandatory;  
-  scroll-behavior: smooth;  
-  max-height: 364px; /* Menyesuaikan tinggi maksimum gambar (480px) + padding */  
-  position: relative;  
-}  
+    .produk-container {  
+      display: flex;  
+      overflow-x: auto;  
+      scroll-snap-type: x mandatory;  
+      scroll-behavior: smooth;  
+      max-height: 364px; /* Menyesuaikan tinggi maksimum gambar (480px) + padding */  
+      position: relative;  
+    }  
   
-.produk-item {  
-  flex: 0 0 100%;  
-  scroll-snap-align: start;  
-  text-align: center;  
-  padding: 0;  
-  display: flex;  
-  flex-direction: column;  
-  align-items: center;  
-  justify-content: center;  
-  box-sizing: border-box;
-}  
-  
-/* Menyesuaikan gambar agar proporsional dan tidak meloncat */  
-.produk-item object,  
-.produk-item img {  
-  height: 480px;           /* Gambar seragam */  
-  width: auto;  
-  max-width: 100%;         /* Supaya tetap responsif */  
-  object-fit: contain;  
-  display: block;  
-}  
-  
-/* Teks di bawah gambar */  
-.produk-item p {  
-  margin-top: 0.25rem;  
-  color: #555;  
-}  
-  
-/* Teks versi dark mode */  
-body.dark .produk-item p {  
-  color: #ccc;  
-}  
-  
-/* Navigasi titik di bawah carousel */  
-.produk-nav {  
-  text-align: center;  
-  margin-top: 1rem;  
-}  
-  
-.produk-nav span {  
-  display: inline-block;  
-  width: 10px;  
-  height: 10px;  
-  border-radius: 50%;  
-  background: #ccc;  
-  margin: 0 5px;  
-}  
-  
-.produk-nav span.active {  
-  background: #25d366;  
-}  
-  
-/* Tombol panah kiri-kanan */  
-.produk-arrow {  
-  position: absolute;  
-  top: 50%;  
-  transform: translateY(-50%);  
-  font-size: 2rem;  
-  color: #25d366;  
-  background: #fff;  
-  border-radius: 50%;  
-  padding: 0.3rem 0.6rem;  
-  cursor: pointer;  
-  z-index: 5;  
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);  
-}  
-  
-.produk-arrow.left {  
-  left: 10px;  
-}  
-  
-.produk-arrow.right {  
-  right: 10px;  
-}
+    .produk-item {  
+      flex: 0 0 100%;  
+      scroll-snap-align: start;  
+      text-align: center;  
+      padding: 0;  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      justify-content: center;  
+      box-sizing: border-box;
+    }
+    .produk-item object,  
+    .produk-item img {  
+      height: 480px;           /* Gambar seragam */  
+      width: auto;  
+      max-width: 100%;         /* Supaya tetap responsif */  
+      object-fit: contain;  
+      display: block;  
+    }  
+    .produk-item p {  
+      margin-top: 0.25rem;  
+      color: #555;  
+    }
+    body.dark .produk-item p {  
+      color: #ccc;  
+    }
+    .produk-nav {  
+      text-align: center;  
+      margin-top: 1rem;  
+    }
+    .produk-nav span {  
+      display: inline-block;  
+      width: 10px;  
+      height: 10px;  
+      border-radius: 50%;  
+      background: #ccc;  
+      margin: 0 5px;  
+    }
+    .produk-nav span.active {  
+      background: #25d366;  
+    }
+    .produk-arrow {  
+      position: absolute;  
+      top: 50%;  
+      transform: translateY(-50%);  
+      font-size: 2rem;  
+      color: #25d366;  
+      background: #fff;  
+      border-radius: 50%;  
+      padding: 0.3rem 0.6rem;  
+      cursor: pointer;  
+      z-index: 5;  
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);  
+    }
+    .produk-arrow.left {  
+      left: 10px;  
+    }
+    .produk-arrow.right {  
+      right: 10px;  
+    }
     .cta {
       text-align: center;
       margin: 2rem 0;
@@ -386,24 +372,28 @@ body.dark .produk-item p {
       margin-bottom: 1rem;
       line-height: 1.5;
     }
-.install-btn {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem; /* jadi di kiri bawah, bukan kanan */
-  z-index: 999;
-  padding: 0.6rem 1.2rem;
-  background-color: #25d366;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  transition: background-color 0.3s ease;
-}
-.install-btn:hover {
-  background-color: #1da955;
-}
+    .install-btn {
+      position: fixed;
+      bottom: 4rem; /* agar tidak tumpang tindih dengan tombol mode gelap */
+      right: 1rem;
+      background: #008000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 20;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .install-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
   </style>
 </head>
 <body>
@@ -597,6 +587,7 @@ Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
     </svg>
     Install Aplikasi
   </button>
+
   <script src="js/script.js" defer></script>
   <script src="js/install.js" defer></script>
   <script>
