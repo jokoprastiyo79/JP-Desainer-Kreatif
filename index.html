@@ -386,6 +386,24 @@ body.dark .produk-item p {
       margin-bottom: 1rem;
       line-height: 1.5;
     }
+.install-btn {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem; /* jadi di kiri bawah, bukan kanan */
+  z-index: 999;
+  padding: 0.6rem 1.2rem;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: background-color 0.3s ease;
+}
+.install-btn:hover {
+  background-color: #1da955;
+}
   </style>
 </head>
 <body>
@@ -573,8 +591,12 @@ Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
 
   <button class="dark-toggle" onclick="toggleDark()">🌙 Mode</button>
 
-  <button id="installBtn" style="display:none">Install Aplikasi</button>
-
+  <button id="installBtn" class="install-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="white" viewBox="0 0 24 24">
+      <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18h14v2H5z"/>
+    </svg>
+    Install Aplikasi
+  </button>
   <script src="js/script.js" defer></script>
   <script src="js/install.js" defer></script>
   <script>
