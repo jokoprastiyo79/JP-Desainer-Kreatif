@@ -1,23 +1,21 @@
 const installBtn = document.getElementById('installBtn');
 let deferredPrompt;
 
-// 1. Sembunyikan tombol dari awal
-installBtn.style.display = 'none';
+installBtn.style.display = 'none'; // Sembunyikan dari awal
 
-// 2. Cek apakah aplikasi sudah diinstal (standalone)
-const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+const isStandalone =
+  window.matchMedia('(display-mode: standalone)').matches ||
+  window.navigator.standalone === true;
 
-if (isStandalone) {
-  installBtn.style.display = 'none'; // Sudah terinstal
-}
-
-// 3. Hanya tampilkan tombol jika browser mendukung
+// ❗ Cek apakah browser mendukung install prompt
+let supportsInstall = false;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
+  supportsInstall = true;
 
   if (!isStandalone) {
-    installBtn.style.display = 'flex'; // Tampilkan tombol
+    installBtn.style.display = 'flex';
   }
 
   installBtn.addEventListener('click', () => {
@@ -33,7 +31,17 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 });
 
-// 4. Setelah diinstal, sembunyikan tombol
+// ❗ Tambahan: kalau browser tidak pernah mendukung beforeinstallprompt
+// pastikan tombol tetap disembunyikan
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    if (!supportsInstall && !isStandalone) {
+      installBtn.style.display = 'none'; // Jangan tampilkan tombol di browser non-supported
+    }
+  }, 1000); // kasih waktu 1 detik untuk memastikan event belum muncul
+});
+
+// Jika sudah terinstal
 window.addEventListener('appinstalled', () => {
   console.log('📱 PWA sudah diinstal');
   installBtn.style.display = 'none';
