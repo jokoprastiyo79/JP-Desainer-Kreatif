@@ -1,37 +1,31 @@
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const installBtn = document.getElementById('installBtn');
-    let deferredPrompt;
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
 
-    installBtn.style.display = 'none';
+// Cek apakah browser mendukung event beforeinstallprompt
+if ('beforeinstallprompt' in window) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
 
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+    // Tampilkan tombol install
+    installBtn.style.display = 'block';
 
-    if (isStandalone) {
+    installBtn.addEventListener('click', () => {
       installBtn.style.display = 'none';
-      return;
-    }
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.style.display = 'flex';
-
-      installBtn.addEventListener('click', () => {
-        installBtn.style.display = 'none';
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choice) => {
-          if (choice.outcome === 'accepted') {
-            console.log('✅ Aplikasi diinstal');
-          }
-          deferredPrompt = null;
-        });
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        // Bisa tambahkan tracking atau log
+        deferredPrompt = null;
       });
     });
-
-    window.addEventListener('appinstalled', () => {
-      installBtn.style.display = 'none';
-      console.log('📱 Aplikasi sudah terinstal');
-    });
   });
-</script>
+} else {
+  // Fallback untuk browser yang tidak support prompt install otomatis
+  installBtn.style.display = 'block';
+  installBtn.textContent = '📱 Tambahkan ke layar utama';
+  installBtn.addEventListener('click', () => {
+    alert(
+      "Browser ini tidak mendukung pemasangan otomatis.\n\nUntuk memasang aplikasi ini:\n• Tekan ikon menu browser (biasanya titik tiga/berbagi)\n• Pilih 'Tambahkan ke layar utama' atau 'Install App'."
+    );
+  });
+}
